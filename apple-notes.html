@@ -4,9 +4,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <style>
-@media(prefers-color-scheme:light){:root{color:#454545}}
-@media(prefers-color-scheme:dark) {:root{color:#dcdcdc}}
+:root{font-family:'.AppleSystemUIFont', system-ui, sans-serif}
+@media(prefers-color-scheme:light){:root{color:#454545};.date{color:#ababab}}
+@media(prefers-color-scheme:dark) {:root{color:#dcdcdc};.date{color:#676767}}
 a,a:visited{color:#ebb800}
+.date{text-align:center;font: 14.0px '.AppleSystemUIFont'}
 
 p.p1 {margin: 0.0px 0.0px 3.0px 0.0px; font: 28.0px '.AppleSystemUIFont'}
 p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 17.0px '.AppleSystemUIFont'}
@@ -17,6 +19,7 @@ span.s2 {font-family: 'UICTFontTextStyleBody'; font-weight: normal; font-style: 
 </style>
 </head>
 <body>
+<p class="date">Nov 4, 2024 at 5:36 PM</p>
 
 <p class="p1"><span class="s1">Apple Notes</span></p>
 <p class="p2"><span class="s2">This site is powered by Apple Notes.</span></p>
