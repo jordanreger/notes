@@ -6,22 +6,25 @@
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<p class="date">Nov 5, 2024 at 10:06 AM</p>
-
+<p class="date">Nov 5, 2024 at 12:28 PM</p>
 <p class="p1"><b>Apple Notes</b></p>
-<p class="p2">This site is powered by Apple Notes.</p>
-<p class="p3"><br></p>
-<p class="p2">After trying various blogging platforms, Notion, custom servers, Obsidian Publish, writing HTML, Markdown, and JavaScript, I found Apple Notes to be the easiest way to maintain a website. Its simplicity is its strength and weakness. It lacks the customizability of Obsidian, the cool integrations of Notion, and the versatility of HTML.</p>
-<p class="p3"><br></p>
-<p class="p2">However, I realized that I didn’t need these features. What mattered most was simplicity. I agree with <a href="https://stephango.com">Steph Ango</a>, the creator of Obsidian, about the importance of <a href="https://stephango.com/file-over-app">files over apps</a>. Unfortunately, Apple doesn’t support this.</p>
-<p class="p3"><br></p>
-<p class="p2">To liberate my notes, I created a Shortcut that took me a few weeks to brainstorm and a few days to build.</p>
-<p class="p3"><br></p>
-<p class="p2">The Shortcut takes the first line in the note (the title) and grabs it by title. This returns a Note type, which allows me to access the body, summary, date created, and more. Notably, it also returns the rich text of the note, enabling me to convert it to HTML.</p>
-<p class="p3"><br></p>
-<p class="p2">I then get the file’s SHA hash and encode it to Base64, so GitHub will accept it. I send it via the API and commit the file. GitHub pages handles the rest.</p>
-<p class="p3"><br></p>
-<p class="p2">You can download the Shortcut here: <a href="https://jordanreger.com/Upload.shortcut">Upload.shortcut</a></p>
+
+<p class="p1"><span class="s1">This site is powered by Apple Notes.</span></p>
+<p class="p1"><span class="s1">After trying various blogging platforms, Notion, custom servers, Obsidian Publish, writing HTML,</span></p>
+<p class="p1"><span class="s1">Markdown, and JavaScript, I found Apple Notes to be the easiest way to maintain a website. Its</span></p>
+<p class="p1"><span class="s1">simplicity is its strength and weakness. It lacks the customizability of Obsidian, the cool integrations</span></p>
+<p class="p1"><span class="s1">of Notion, and the versatility of HTML.</span></p>
+<p class="p1"><span class="s1">However, I realized that I didn’t need these features. What mattered most was simplicity. I agree</span></p>
+<p class="p1"><span class="s1">with Steph Ango, the creator of Obsidian, about the importance of files over apps. Unfortunately,</span></p>
+<p class="p1"><span class="s1">Apple doesn’t support this.</span></p>
+<p class="p1"><span class="s1">To liberate my notes, I created a Shortcut that took me a few weeks to brainstorm and a few days to</span></p>
+<p class="p1"><span class="s1">build.</span></p>
+<p class="p1"><span class="s1">The Shortcut takes the first line in the note (the title) and grabs it by title. This returns a Note type,</span></p>
+<p class="p1"><span class="s1">which allows me to access the body, summary, date created, and more. Notably, it also returns the</span></p>
+<p class="p1"><span class="s1">rich text of the note, enabling me to convert it to HTML.</span></p>
+<p class="p1"><span class="s1">I then get the file’s SHA hash and encode it to Base64, so GitHub will accept it. I send it via the API</span></p>
+<p class="p1"><span class="s1">and commit the file. GitHub pages handles the rest.</span></p>
+<p class="p1"><span class="s1">You can download the Shortcut here: Upload.shortcut</span></p>
 
 </body>
 </html>
