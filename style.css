@@ -1,0 +1,32 @@
+:root{font-family:system-ui,sans-serif}
+@media (prefers-color-scheme: light) {
+  :root{color:#454545}
+  .date{color:#ababab}
+  p.p5{background-color:#e9e9e9}
+}
+@media (prefers-color-scheme: dark) {
+  :root{color:#dcdcdc}
+  .date{color:#676767}
+  p.p5{background-color:#424141}
+}
+a,a:visited{color:#ebb800}
+.date{text-align:center;font-size:0.83em}
+
+p,li{margin:0}
+p.p1{font-size:2em}
+p.p3{min-height: 22.0px}
+p.p4{font-size:1.5em}
+p.p5{padding:10px 20px;border-radius:7.5px}
+span.s1{font-weight:bold;font-style:normal}
+span.s2{font-weight:normal;font-style:normal}
+span.s3{font-weight:bold;font-style:normal}
+span.s4{font-weight:bold;font-style:normal}
+span.s5{font-weight:bold;font-style:normal}
+span.s6{font-family:ui-monospace,monospace;font-weight:normal;font-style:normal}
+table.t1{border-collapse:collapse}
+td.td1{border:1px solid #aaa;padding:1px 5px}
+ol.ol1{list-style-type:decimal}
+ul.ul1{list-style-type:circle}
+ul.ul2{list-style-type:'✓  '}
+ul.ul3{list-style-type:disc}
+ul.ul4{list-style-type:'—  '}
