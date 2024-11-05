@@ -1,4 +1,4 @@
-:root{font-family:system-ui,sans-serif}
+:root{font-family:system-ui,sans-serif !important}
 @media (prefers-color-scheme: light) {
   :root{color:#454545 !important}
   .date{color:#ababab}
