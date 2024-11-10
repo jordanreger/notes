@@ -1,5 +1,5 @@
 *{font-family:system-ui,sans-serif !important}
-
+html{margin:auto 10px 20px}
 @media (prefers-color-scheme: light) {
   :root{color:#454545 !important}
   .date{color:#ababab}
