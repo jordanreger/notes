@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="/style.css">
+<style>
+p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 17.0px '.AppleSystemUIFont'}
+p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 17.0px '.AppleSystemUIFont'; min-height: 22.0px}
+p.p3 {margin: 0.0px 0.0px 4.0px 0.0px; font: 22.0px '.AppleSystemUIFont'}
+span.s1 {font-family: 'UICTFontTextStyleBody'; font-weight: normal; font-style: normal; font-size: 17.00px}
+span.s2 {font-family: 'UICTFontTextStyleEmphasizedBody'; font-weight: bold; font-style: normal; font-size: 17.00px}
+span.s3 {font-family: 'UICTFontTextStyleBody'; font-weight: bold; font-style: normal; font-size: 22.00px}
+</style>
+</head>
+<body>
+<header>
+<a href="/" style="text-decoration:none"><span style="font-size:1.25em;font-weight:100px">‹</span>&nbsp;Home</a>
+</header>
+<p class="date">November 10, 2024 at 12:35 PM</p>
+<h1>Apple Notes</h1>
+
+
+<p class="p1"><span class="s1">This site is powered by Apple Notes.</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">After trying various blogging platforms, Notion, Obsidian Publish, writing HTML and publishing it to a VPS, JavaScript edge scripts, etc., I found Apple Notes to be the easiest way to maintain a website. It lacks most of the fancy features of the other tools but makes up for it with its simplicity. I spent an incredible amount of time (~2 weeks) trying to get the workflow to be as seamless as possible so that I never have to think about it again. Shortcuts made that process both super easy and incredibly frustrating. However, I feel I’ve finally achieved my perfect system (almost… I’ll get to that later). If you’re not a technical person but you still want to use this or you are a technical person and just don’t care, skip to the section entitled </span><span class="s2">How can I use it?</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">How does it work?</span></p>
+<p class="p1"><span class="s1">Shortcuts seemed like the obvious choice because it has access to so much of the device and its facets. I knew that I could probably work my way around the fact that Apple Notes are notoriously hard to export. After testing quite a few methods, I figured out that I could absolutely do that. It’s a bit of a roundabout method but it works; first, I grab the text passed into the Shortcut via Share Sheet and split it by new lines to get the first item - the title. I then use the </span><span class="s2">find notes</span><span class="s1"> action to grab notes by title (as well as an additional filter for the tag public to ensure I’m grabbing the right one) and then get the actual Note item back from it. From there, I remove the summary (the second line which includes the public tag and the slug) and parse the body into HTML. The provided HTML parser sucks, so I extract the styles and body from the output using regex. I then put that into my own template, and encode it. If there are any images, I loop through them and encode them as well. Everything gets sent to the GitHub API to be turned into a blob and committed as a tree; GitHub Pages does the rest. That’s it!</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">How can I use it?</span></p>
+<p class="p1"><span class="s1">// TODO: write this…</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">Download the Shortcut here: <a href="https://www.icloud.com/shortcuts/e8d33fbb492b49028f5bbad481502059">Upload.shortcut</a></span></p>
+
+</body>
+</html>
