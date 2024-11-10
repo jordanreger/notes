@@ -1,5 +1,6 @@
 *{font-family:system-ui,sans-serif !important}
 html{margin:auto 20px 20px 10px}
+body{max-width:900px;margin:0 auto}
 @media (prefers-color-scheme: light) {
   :root{color:#454545 !important}
   .date{color:#ababab}
@@ -11,9 +12,9 @@ html{margin:auto 20px 20px 10px}
 a,a:visited{color:#ebb800}
 .date{text-align:center;font-size:0.83em}
 h1{margin:0}
-@media (max-width:650px) {
+@media (max-width:900px) {
   img{max-width:100%}
 }
-@media (min-width:650px) {
-  img{max-width:650px}
+@media (min-width:900px) {
+  img{max-width:900px}
 }
