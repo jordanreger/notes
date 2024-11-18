@@ -1,4 +1,6 @@
 *{font-family:system-ui,sans-serif !important}
+::selection{background-color:rgba(235,184,0,0.3)}
+::-moz-selection{background-color:rgba(235,184,0,0.3)}
 html{margin:auto 20px 20px 10px}
 body{max-width:900px;margin:20px auto;margin-top:0}
 @media (prefers-color-scheme: light) {
