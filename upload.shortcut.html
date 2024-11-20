@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Upload.shortcut</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="/style.css">
+<style>
+p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 17.0px '.AppleSystemUIFont'}
+p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 17.0px '.AppleSystemUIFont'; min-height: 22.0px}
+p.p3 {margin: 0.0px 0.0px 4.0px 0.0px; font: 22.0px '.AppleSystemUIFont'}
+li.li1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 17.0px '.AppleSystemUIFont'}
+span.s1 {font-family: 'UICTFontTextStyleBody'; font-weight: normal; font-style: normal; font-size: 17.00px}
+span.s2 {font-family: 'UICTFontTextStyleEmphasizedBody'; font-weight: bold; font-style: normal; font-size: 17.00px}
+span.s3 {font-family: 'UICTFontTextStyleBody'; font-weight: bold; font-style: normal; font-size: 22.00px}
+ol.ol1 {list-style-type: decimal}
+ul.ul1 {list-style-type: '—  '}
+ul.ul2 {list-style-type: circle}
+ul.ul3 {list-style-type: '✓  '}
+</style>
+</head>
+<body>
+<header style="display:flex;align-items:center">
+<span>
+<a href="/" style="text-decoration:none"><span style="font-size:1.25em;font-weight:100px">‹</span>&nbsp;Notes</a>
+</span>
+<span style="margin-left:auto">
+<a href="javascript:navigator.share({title:document.title,url:window.location.href})"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#ebb800"><path d="M240-40q-33 0-56.5-23.5T160-120v-440q0-33 23.5-56.5T240-640h80q17 0 28.5 11.5T360-600q0 17-11.5 28.5T320-560h-80v440h480v-440h-80q-17 0-28.5-11.5T600-600q0-17 11.5-28.5T640-640h80q33 0 56.5 23.5T800-560v440q0 33-23.5 56.5T720-40H240Zm200-727-36 36q-12 12-28 11.5T348-732q-11-12-11.5-28t11.5-28l104-104q12-12 28-12t28 12l104 104q11 11 11 27.5T612-732q-12 12-28.5 12T555-732l-35-35v407q0 17-11.5 28.5T480-320q-17 0-28.5-11.5T440-360v-407Z"></path></svg></a>
+</span>
+</header>
+<p class="date">November 20, 2024 at 4:54 PM</p>
+<h1>Upload.shortcut</h1>
+
+
+<p class="p1"><span class="s1">This site is powered by Apple Notes.</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">After trying various blogging platforms, Notion, Obsidian Publish, writing HTML and publishing it to a VPS, JavaScript edge scripts, etc., I found Apple Notes to be the easiest way to maintain a website. It lacks most of the fancy features of the other tools but makes up for it with its simplicity. I spent an incredible amount of time (~2 weeks) trying to get the workflow to be as seamless as possible so that I never have to think about it again. Shortcuts made that process both super easy and incredibly frustrating. However, I feel I’ve finally achieved my perfect system (almost… I’ll get to that later). If you’re not a technical person but you still want to use this or you are a technical person and just don’t care, skip to the section entitled </span><span class="s2">How can I use it?</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">How does it work?</span></p>
+<p class="p1"><span class="s1">Shortcuts seemed like the obvious choice because it has access to so much of the device and its facets. I knew that I could probably work my way around the fact that Apple Notes are notoriously hard to export. After testing quite a few methods, I figured out that I could absolutely do that. It’s a bit of a roundabout method but it works; first, I grab the text passed into the Shortcut via Share Sheet and split it by new lines to get the first item - the title. I then use the </span><span class="s2">find notes</span><span class="s1"> action to grab notes by title (as well as an additional filter for the tag public to ensure I’m grabbing the right one) and then get the actual Note item back from it. From there, I remove the summary (the second line which includes the public tag and the slug) and parse the body into HTML. The provided HTML parser sucks, so I extract the styles and body from the output using regex. I then put that into my own template, and encode it. If there are any images, I loop through them and encode them as well. Everything gets sent to the GitHub API to be turned into a blob and committed as a tree; GitHub Pages does the rest. That’s it!</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">How can I use it?</span></p>
+<p class="p1"><span class="s1">You need three things: a GitHub account, repository, and access token. Here’s how you can do each of these:</span></p>
+<ol class="ol1">
+<li class="li1"><span class="s1"><a href="https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github">Creating an account on GitHub</a></span></li>
+<li class="li1"><span class="s1"><a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository">Creating a new repository</a></span></li>
+<li class="li1"><span class="s1"><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">Creating a GitHub Pages site</a></span></li>
+<li class="li1"><span class="s1"><a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic">Creating a personal access token</a></span></li>
+</ol>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">After you’ve done all of the above, you can import the Shortcut. Add it here:</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><a href="https://www.icloud.com/shortcuts/56b2b4f1385b4aed846e52cfd4c5551f">Upload.shortcut</a></span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">When you import it, it’ll ask you to fill in your GitHub username, repository name, and access token. Then all you have to do is write a note and hit the Share button. It’ll show up below the normal things such as “Copy” or “Print” - hit “Upload” and it’ll do all the work for you!</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">What works?</span></p>
+<ul class="ul1">
+<li class="li1"><span class="s1">Links</span></li>
+<li class="li1"><span class="s1">Tables</span></li>
+<li class="li1"><span class="s1">Images</span></li>
+<li class="li1"><span class="s1">Text, obviously</span></li>
+<li class="li1"><span class="s1">Lists</span></li>
+<li class="li1"><span class="s1">Handwritten notes (since they’re images)</span></li>
+</ul>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">What doesn’t work?</span></p>
+<ul class="ul1">
+<li class="li1"><span class="s1">Attachments other than images</span></li>
+<li class="li1"><span class="s1">Anything on macOS for some reason</span></li>
+</ul>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p3"><span class="s3">Roadmap</span></p>
+<ul class="ul2">
+<li class="li1"><span class="s1">Better header (more like Notes header)</span></li>
+<li class="li1"><span class="s1">macOS support</span></li>
+<li class="li1"><span class="s1">PDFs</span></li>
+<li class="li1"><span class="s1">Video</span></li>
+<li class="li1"><span class="s1">Other - <a href="mailto:mail@jordanreger.com">email me</a> if you want to suggest anything!</span></li>
+</ul>
+<ul class="ul3">
+<li class="li1"><span class="s1">Links</span></li>
+<li class="li1"><span class="s1">Tables</span></li>
+<li class="li1"><span class="s1">Handwritten notes</span></li>
+<li class="li1"><span class="s1">Images</span></li>
+<li class="li1"><span class="s1">Uploading to GitHub pages</span></li>
+</ul>
+
+</body>
+</html>
